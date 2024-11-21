@@ -236,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                     // color: Colors.blue, // Background color
-                    width: 300, // Width of the container
+                    width: 350, // Width of the container
                     // height: 300,
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 246, 224,
@@ -269,13 +269,13 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  " 500 X  ",
+                                  "500 X  ",
                                   style: TextStyle(fontSize: 25),
                                 ),
                                 Container(
-                                  width: 50,
+                                  width: 70,
                                   child: TextField(
-                                    style: TextStyle(fontSize: 23),
+                                    style: TextStyle(fontSize: 15),
                                     controller:
                                         _controllerFor500, // Set controller to capture text
                                     keyboardType:
@@ -326,7 +326,7 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text(
-                                  "   200 X ",
+                                  "200 X ",
                                   style: TextStyle(fontSize: 25),
                                 ),
                                 Container(
@@ -338,9 +338,9 @@ class _HomePageState extends State<HomePage> {
                                           width: 2.0),
                                     ),
                                   ),
-                                  width: 50,
+                                  width: 70,
                                   child: TextField(
-                                    style: TextStyle(fontSize: 23),
+                                    style: TextStyle(fontSize: 15),
                                     controller:
                                         _controllerFor200, // Set controller to capture text
                                     keyboardType:
@@ -389,7 +389,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text(
-                                "   100 X ",
+                                "100 X ",
                                 style: TextStyle(fontSize: 25),
                               ),
                               Container(
@@ -401,9 +401,9 @@ class _HomePageState extends State<HomePage> {
                                         width: 2.0),
                                   ),
                                 ),
-                                width: 50,
+                                width: 70,
                                 child: TextField(
-                                  style: TextStyle(fontSize: 23),
+                                  style: TextStyle(fontSize: 15),
                                   controller:
                                       _controllerFor100, // Set controller to capture text
                                   keyboardType:
@@ -451,7 +451,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "     50 X ",
+                                "    50 X ",
                                 style: TextStyle(fontSize: 25),
                               ),
                               Container(
@@ -463,9 +463,9 @@ class _HomePageState extends State<HomePage> {
                                         width: 2.0),
                                   ),
                                 ),
-                                width: 50,
+                                width: 70,
                                 child: TextField(
-                                  style: TextStyle(fontSize: 23),
+                                  style: TextStyle(fontSize: 15),
                                   controller:
                                       _controllerFor50, // Set controller to capture text
                                   keyboardType:
@@ -512,7 +512,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "     20 X ",
+                                "    20 X ",
                                 style: TextStyle(fontSize: 25),
                               ),
                               Container(
@@ -524,9 +524,9 @@ class _HomePageState extends State<HomePage> {
                                         width: 2.0),
                                   ),
                                 ),
-                                width: 50,
+                                width: 70,
                                 child: TextField(
-                                  style: TextStyle(fontSize: 23),
+                                  style: TextStyle(fontSize: 15),
                                   controller:
                                       _controllerFor20, // Set controller to capture text
                                   keyboardType:
@@ -573,7 +573,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "     10 X ",
+                                "    10 X ",
                                 style: TextStyle(fontSize: 25),
                               ),
                               Container(
@@ -585,9 +585,9 @@ class _HomePageState extends State<HomePage> {
                                         width: 2.0),
                                   ),
                                 ),
-                                width: 50,
+                                width: 70,
                                 child: TextField(
-                                  style: TextStyle(fontSize: 23),
+                                  style: TextStyle(fontSize: 15),
                                   controller:
                                       _controllerFor10, // Set controller to capture text
                                   keyboardType:
@@ -639,9 +639,9 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(fontSize: 25),
                               ),
                               Container(
-                                width: 50,
+                                width: 70,
                                 child: TextField(
-                                  style: TextStyle(fontSize: 23),
+                                  style: TextStyle(fontSize: 15),
                                   controller:
                                       _controllerForcoins, // Set controller to capture text
                                   keyboardType:
