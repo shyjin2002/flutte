@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class Calculator extends StatefulWidget {
@@ -8,11 +10,14 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+  int _result = 0;
+  String numbers = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
+        // ignore: prefer_const_constructors
         title: Center(
           child: const Text(
             'Calculator',
@@ -34,8 +39,13 @@ class _CalculatorState extends State<Calculator> {
         child: Column(
           children: [
             Container(
-              // width: 420,
               height: 250,
+
+              // child: Text(
+              //   _result
+              //       .toString(), // A string holding the result of the calculation
+              //   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              // ),
               decoration: BoxDecoration(
                 color: const Color.fromARGB(
                     255, 244, 236, 236), // Background color of the container
@@ -49,6 +59,13 @@ class _CalculatorState extends State<Calculator> {
                     spreadRadius: 2, // How much the shadow should spread
                   ),
                 ],
+              ),
+            ),
+            Container(
+              child: Text(
+                _result
+                    .toString(), // A string holding the result of the calculation
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
@@ -133,11 +150,37 @@ class _CalculatorState extends State<Calculator> {
                       ),
                     ),
                   ),
+                  // Expanded(
+                  //   flex: 1,
+                  //   child: ElevatedButton(
+                  //     onPressed: () {
+                  //       print("Button % pressed!");
+                  //     },
+                  //     style: ElevatedButton.styleFrom(
+                  //       padding:
+                  //           EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+
+                  //       backgroundColor: const Color.fromARGB(
+                  //           255, 246, 224, 241), // Button size
+                  //       shape: RoundedRectangleBorder(
+                  //         borderRadius:
+                  //             BorderRadius.circular(10), // Rounded corners
+                  //       ),
+                  //     ),
+                  //     child: Text(
+                  //       "%",
+                  //       style: TextStyle(
+                  //         fontSize: 24.0, // Text size
+                  //         fontWeight: FontWeight.bold, // Bold text
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   Expanded(
                     flex: 1,
                     child: ElevatedButton(
                       onPressed: () {
-                        print("Button % pressed!");
+                        print("Button C pressed!");
                       },
                       style: ElevatedButton.styleFrom(
                         padding:
@@ -151,33 +194,7 @@ class _CalculatorState extends State<Calculator> {
                         ),
                       ),
                       child: Text(
-                        "%",
-                        style: TextStyle(
-                          fontSize: 24.0, // Text size
-                          fontWeight: FontWeight.bold, // Bold text
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        print("Button - pressed!");
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-
-                        backgroundColor: const Color.fromARGB(
-                            255, 246, 224, 241), // Button size
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(10), // Rounded corners
-                        ),
-                      ),
-                      child: Text(
-                        "-",
+                        "C",
                         style: TextStyle(
                           fontSize: 24.0, // Text size
                           fontWeight: FontWeight.bold, // Bold text
@@ -191,47 +208,55 @@ class _CalculatorState extends State<Calculator> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    print("Button 4 pressed!");
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                Expanded(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("Button 4 pressed!");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
 
-                    backgroundColor:
-                        const Color.fromARGB(255, 246, 224, 241), // Button size
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                      backgroundColor: const Color.fromARGB(
+                          255, 246, 224, 241), // Button size
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(10), // Rounded corners
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    "4",
-                    style: TextStyle(
-                      fontSize: 24.0, // Text size
-                      fontWeight: FontWeight.bold, // Bold text
+                    child: Text(
+                      "4",
+                      style: TextStyle(
+                        fontSize: 24.0, // Text size
+                        fontWeight: FontWeight.bold, // Bold text
+                      ),
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    print("Button 5 pressed!");
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                Expanded(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("Button 5 pressed!");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
 
-                    backgroundColor:
-                        const Color.fromARGB(255, 246, 224, 241), // Button size
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                      backgroundColor: const Color.fromARGB(
+                          255, 246, 224, 241), // Button size
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(10), // Rounded corners
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    "5",
-                    style: TextStyle(
-                      fontSize: 24.0, // Text size
-                      fontWeight: FontWeight.bold, // Bold text
+                    child: Text(
+                      "5",
+                      style: TextStyle(
+                        fontSize: 24.0, // Text size
+                        fontWeight: FontWeight.bold, // Bold text
+                      ),
                     ),
                   ),
                 ),
@@ -265,7 +290,18 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   child: ElevatedButton(
                     onPressed: () {
-                      print("Button x pressed!");
+                      List<String> parts = numbers.split('+');
+
+                      if (parts.length == 2) {
+                        // Try to parse the numbers
+
+                        int num1 = int.parse(parts[0].trim()); // First number
+                        int num2 = int.parse(parts[1].trim()); // Second number
+                        setState(() {
+                          _result = num1 + num2;
+                        });
+                        // Perform the addition
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       padding:
@@ -279,7 +315,7 @@ class _CalculatorState extends State<Calculator> {
                       ),
                     ),
                     child: Text(
-                      "x",
+                      "+",
                       style: TextStyle(
                         fontSize: 24.0, // Text size
                         fontWeight: FontWeight.bold, // Bold text
@@ -322,7 +358,7 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   child: ElevatedButton(
                     onPressed: () {
-                      print("Button 2 pressed!");
+                      numbers += "1";
                     },
                     style: ElevatedButton.styleFrom(
                       padding:
@@ -374,7 +410,7 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   child: ElevatedButton(
                     onPressed: () {
-                      print("Button + pressed!");
+                      print("Button - pressed!");
                     },
                     style: ElevatedButton.styleFrom(
                       padding:
@@ -388,7 +424,7 @@ class _CalculatorState extends State<Calculator> {
                       ),
                     ),
                     child: Text(
-                      "+",
+                      "-",
                       style: TextStyle(
                         fontSize: 24.0, // Text size
                         fontWeight: FontWeight.bold, // Bold text
@@ -431,6 +467,32 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   child: ElevatedButton(
                     onPressed: () {
+                      print("Button % pressed!");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+
+                      backgroundColor: const Color.fromARGB(
+                          255, 246, 224, 241), // Button size
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(10), // Rounded corners
+                      ),
+                    ),
+                    child: Text(
+                      "%",
+                      style: TextStyle(
+                        fontSize: 24.0, // Text size
+                        fontWeight: FontWeight.bold, // Bold text
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: () {
                       print("Button 0 pressed!");
                     },
                     style: ElevatedButton.styleFrom(
@@ -453,47 +515,55 @@ class _CalculatorState extends State<Calculator> {
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    print("Button C pressed!");
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                Expanded(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("Button x pressed!");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
 
-                    backgroundColor:
-                        const Color.fromARGB(255, 246, 224, 241), // Button size
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                      backgroundColor: const Color.fromARGB(
+                          255, 246, 224, 241), // Button size
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(10), // Rounded corners
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    "C",
-                    style: TextStyle(
-                      fontSize: 24.0, // Text size
-                      fontWeight: FontWeight.bold, // Bold text
+                    child: Text(
+                      "x",
+                      style: TextStyle(
+                        fontSize: 24.0, // Text size
+                        fontWeight: FontWeight.bold, // Bold text
+                      ),
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    print("Button = pressed!");
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                Expanded(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("Button = pressed!");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
 
-                    backgroundColor:
-                        const Color.fromARGB(255, 246, 224, 241), // Button size
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                      backgroundColor: const Color.fromARGB(
+                          255, 246, 224, 241), // Button size
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(10), // Rounded corners
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    "=",
-                    style: TextStyle(
-                      fontSize: 24.0, // Text size
-                      fontWeight: FontWeight.bold, // Bold text
+                    child: Text(
+                      "=",
+                      style: TextStyle(
+                        fontSize: 24.0, // Text size
+                        fontWeight: FontWeight.bold, // Bold text
+                      ),
                     ),
                   ),
                 ),
