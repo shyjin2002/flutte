@@ -151,7 +151,8 @@ class _HomePageState extends State<HomePage> {
                         // Your action here
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Calculator()),
+                          MaterialPageRoute(
+                              builder: (context) => CalculatorApp()),
                         );
                       },
                       style: TextButton.styleFrom(
